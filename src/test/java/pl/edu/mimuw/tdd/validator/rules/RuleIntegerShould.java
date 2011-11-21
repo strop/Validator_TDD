@@ -36,6 +36,11 @@ public class RuleIntegerShould {
 	}
 	
 	@Test
+	public void acceptVeryBigInteger() {
+		assertTrue(integerRule.isValid("978459087490587235749384759023745092873490572934058729308475902374938457290384"));
+	}
+	
+	@Test
 	public void acceptIntegerSurroundedByWhitespace() {
 		assertTrue(integerRule.isValid("	  937864	  "));
 	}

@@ -7,12 +7,7 @@ public class RuleInteger implements Rule {
 	@Override
 	public boolean isValid(String string) {
 		if(StringUtils.trimToNull(string) == null) return true;
-		try {
-			Integer.parseInt(StringUtils.trimToEmpty(string));
-			return true;
-		} catch (NumberFormatException numberFormatException) {
-			return false;
-		}
+		return StringUtils.isNumeric(StringUtils.trimToEmpty(string));
 	}
 
 }
