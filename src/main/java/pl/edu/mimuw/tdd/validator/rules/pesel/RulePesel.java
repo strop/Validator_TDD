@@ -11,6 +11,7 @@ public class RulePesel extends RuleComplex {
 		add(new RuleNotEmpty());
 		add(new RuleInteger());
 		add(new RuleExactCharLength(11));
-		
+		add(new RulePeselDate());
+		add(new RulePeselChecksum());
 	}
 }

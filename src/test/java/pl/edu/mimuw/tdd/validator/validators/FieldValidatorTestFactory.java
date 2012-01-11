@@ -1,6 +1,5 @@
 package pl.edu.mimuw.tdd.validator.validators;
 
-import static org.mockito.Matchers.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;

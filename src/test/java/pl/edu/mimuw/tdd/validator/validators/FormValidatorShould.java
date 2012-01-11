@@ -8,8 +8,6 @@ import java.util.Collection;
 import org.junit.Before;
 import org.junit.Test;
 
-import pl.edu.mimuw.tdd.validator.rules.RuleTestFactory;
-
 public class FormValidatorShould {
 
 	public FormValidator formValidator = null;
