@@ -9,7 +9,7 @@ import java.util.List;
 public class FieldValidatorTestFactory {
 
 	public static FieldValidator createAcceptingFieldValidator() {
-		return createFieldValidator(false);
+		return createFieldValidator(true);
 	}
 
 	public static FieldValidator createFailingFieldValidator() {

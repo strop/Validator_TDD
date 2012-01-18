@@ -10,7 +10,7 @@ import java.util.List;
 public class RuleTestFactory {
 
 	public static Rule createAcceptingRule() {
-		return createRule(false);
+		return createRule(true);
 	}
 
 	public static Rule createFailingRule() {

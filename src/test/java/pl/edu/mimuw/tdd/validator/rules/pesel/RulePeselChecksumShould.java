@@ -1,10 +1,14 @@
 package pl.edu.mimuw.tdd.validator.rules.pesel;
 
 import static org.junit.Assert.*;
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class RulePeselChecksumShould {
 
 	RulePeselChecksum rulePeselChecksum = null;
@@ -24,43 +28,15 @@ public class RulePeselChecksumShould {
 	}
 	
 	@Test
-	public void testProperOne() {
-		assertTrue(rulePeselChecksum.isValid("50100579263"));
-	}
-	
-	@Test
-	public void testProperTwo() {
-		assertTrue(rulePeselChecksum.isValid("99873182098"));
-	}
-	
-	@Test
-	public void testProperThree() {
-		assertTrue(rulePeselChecksum.isValid("47090928186"));
-	}
-	
-	@Test
-	public void testProperFour() {
-		assertTrue(rulePeselChecksum.isValid("00000000000"));
+	@Parameters({"47090928186", "50100579263", "99873182098", "00000000000"})
+	public void testProperChecksum(String pesel) {
+		assertTrue(rulePeselChecksum.isValid(pesel));
 	}
 
 	@Test
-	public void testWrongOne() {
-		assertFalse(rulePeselChecksum.isValid("36140597251"));
-	}
-	
-	@Test
-	public void testWrongTwo() {
-		assertFalse(rulePeselChecksum.isValid("36400597258"));
-	}
-	
-	@Test
-	public void testWrongThree() {
-		assertFalse(rulePeselChecksum.isValid("14043182083"));
-	}
-	
-	@Test
-	public void testWrongFour() {
-		assertFalse(rulePeselChecksum.isValid("14864002783"));
+	@Parameters({"36140597251", "36400597258", "14043182083", "14864002783"})
+	public void testWrongChecksum(String pesel) {
+		assertFalse(rulePeselChecksum.isValid(pesel));
 	}
 	
 }

@@ -1,10 +1,14 @@
 package pl.edu.mimuw.tdd.validator.rules.pesel;
 
 import static org.junit.Assert.*;
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class RulePeselDateShould {
 
 	RulePeselDate rulePeselDate = null;
@@ -24,18 +28,9 @@ public class RulePeselDateShould {
 	}
 	
 	@Test
-	public void testProperOne() {
-		assertTrue(rulePeselDate.isValid("50100579261"));
-	}
-	
-	@Test
-	public void testProperTwo() {
-		assertTrue(rulePeselDate.isValid("99873182095"));
-	}
-	
-	@Test
-	public void testProperThree() {
-		assertTrue(rulePeselDate.isValid("47090928186"));
+	@Parameters({"50100579261", "99873182095", "47090928186"})
+	public void testProperDate(String pesel) {
+		assertTrue(rulePeselDate.isValid(pesel));
 	}
 	
 	@Test
